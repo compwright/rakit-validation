@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class Ipv6Test extends TestCase
 {
+    private Ipv6 $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Ipv6;
     }

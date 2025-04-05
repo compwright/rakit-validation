@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class MinTest extends TestCase
 {
+    private Min $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Min;
     }

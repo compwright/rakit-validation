@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class AlphaNumTest extends TestCase
 {
+    private AlphaNum $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new AlphaNum;
     }

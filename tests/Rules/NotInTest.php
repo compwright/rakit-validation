@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class NotInTest extends TestCase
 {
+    private NotIn $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new NotIn;
     }

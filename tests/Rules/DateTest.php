@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class DateTest extends TestCase
 {
+    private Date $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Date;
     }

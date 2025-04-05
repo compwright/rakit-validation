@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class AlphaSpacesTest extends TestCase
 {
+    private AlphaSpaces $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new AlphaSpaces;
     }

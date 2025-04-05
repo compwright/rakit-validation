@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class AcceptedTest extends TestCase
 {
+    private Accepted $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Accepted;
     }

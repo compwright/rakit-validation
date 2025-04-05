@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class AlphaDashTest extends TestCase
 {
+    private AlphaDash $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new AlphaDash;
     }
