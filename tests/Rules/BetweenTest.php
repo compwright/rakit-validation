@@ -11,7 +11,7 @@ class BetweenTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Between;
+        $this->rule = new Between();
     }
 
     public function testValids()

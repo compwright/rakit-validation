@@ -9,7 +9,8 @@ use Rakit\Validation\Rules\Required;
 
 class Validation
 {
-    use Traits\TranslationsTrait, Traits\MessagesTrait;
+    use Traits\TranslationsTrait;
+    use Traits\MessagesTrait;
 
     /** @var mixed */
     protected $validator;
@@ -53,7 +54,7 @@ class Validation
         $this->validator = $validator;
         $this->inputs = $this->resolveInputAttributes($inputs);
         $this->messages = $messages;
-        $this->errors = new ErrorBag;
+        $this->errors = new ErrorBag();
         foreach ($rules as $attributeKey => $rules) {
             $this->addAttribute($attributeKey, $rules);
         }
@@ -81,7 +82,7 @@ class Validation
      */
     public function getAttribute(string $attributeKey)
     {
-        return isset($this->attributes[$attributeKey])? $this->attributes[$attributeKey] : null;
+        return isset($this->attributes[$attributeKey]) ? $this->attributes[$attributeKey] : null;
     }
 
     /**
@@ -92,7 +93,7 @@ class Validation
      */
     public function validate(array $inputs = [])
     {
-        $this->errors = new ErrorBag; // reset error bag
+        $this->errors = new ErrorBag(); // reset error bag
         $this->inputs = array_merge($this->inputs, $this->resolveInputAttributes($inputs));
 
         // Before validation hooks
@@ -342,7 +343,7 @@ class Validation
      */
     protected function isEmptyValue($value): bool
     {
-        $requiredValidator = new Required;
+        $requiredValidator = new Required();
         return false === $requiredValidator->check($value, []);
     }
 
@@ -371,13 +372,15 @@ class Validation
         $primaryAttribute = $attribute->getPrimaryAttribute();
         if (isset($this->aliases[$attribute->getKey()])) {
             return $this->aliases[$attribute->getKey()];
-        } elseif ($primaryAttribute and isset($this->aliases[$primaryAttribute->getKey()])) {
-            return $this->aliases[$primaryAttribute->getKey()];
-        } elseif ($this->validator->isUsingHumanizedKey()) {
-            return $attribute->getHumanizedKey();
-        } else {
-            return $attribute->getKey();
         }
+        if ($primaryAttribute and isset($this->aliases[$primaryAttribute->getKey()])) {
+            return $this->aliases[$primaryAttribute->getKey()];
+        }
+        if ($this->validator->isUsingHumanizedKey()) {
+            return $attribute->getHumanizedKey();
+        }
+        return $attribute->getKey();
+
     }
 
     /**
@@ -461,11 +464,12 @@ class Validation
     {
         if (is_string($value) || is_numeric($value)) {
             return $value;
-        } elseif (is_array($value) || is_object($value)) {
-            return json_encode($value);
-        } else {
-            return '';
         }
+        if (is_array($value) || is_object($value)) {
+            return json_encode($value);
+        }
+        return '';
+
     }
 
     /**
@@ -519,7 +523,7 @@ class Validation
         $exp = explode(':', $rule, 2);
         $rulename = $exp[0];
         if ($rulename !== 'regex') {
-            $params = isset($exp[1])? explode(',', $exp[1]) : [];
+            $params = isset($exp[1]) ? explode(',', $exp[1]) : [];
         } else {
             $params = [$exp[1]];
         }
@@ -547,7 +551,7 @@ class Validation
      */
     public function getAlias(string $attributeKey)
     {
-        return isset($this->aliases[$attributeKey])? $this->aliases[$attributeKey] : null;
+        return isset($this->aliases[$attributeKey]) ? $this->aliases[$attributeKey] : null;
     }
 
     /**

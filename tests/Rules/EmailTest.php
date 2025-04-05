@@ -11,7 +11,7 @@ class EmailTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Email;
+        $this->rule = new Email();
     }
 
     public function testValids()

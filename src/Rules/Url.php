@@ -6,7 +6,6 @@ use Rakit\Validation\Rule;
 
 class Url extends Rule
 {
-
     /** @var string */
     protected $message = "The :attribute is not valid url";
 
@@ -48,20 +47,20 @@ class Url extends Rule
 
         if (!$schemes) {
             return $this->validateCommonScheme($value);
-        } else {
-            foreach ($schemes as $scheme) {
-                $method = 'validate' . ucfirst($scheme) .'Scheme';
-                if (method_exists($this, $method)) {
-                    if ($this->{$method}($value)) {
-                        return true;
-                    }
-                } elseif ($this->validateCommonScheme($value, $scheme)) {
+        }
+        foreach ($schemes as $scheme) {
+            $method = 'validate' . ucfirst($scheme) .'Scheme';
+            if (method_exists($this, $method)) {
+                if ($this->{$method}($value)) {
                     return true;
                 }
+            } elseif ($this->validateCommonScheme($value, $scheme)) {
+                return true;
             }
-
-            return false;
         }
+
+        return false;
+
     }
 
     /**
@@ -86,9 +85,9 @@ class Url extends Rule
     {
         if (!$scheme) {
             return $this->validateBasic($value) && (bool) preg_match("/^\w+:\/\//i", $value);
-        } else {
-            return $this->validateBasic($value) && (bool) preg_match("/^{$scheme}:\/\//", $value);
         }
+        return $this->validateBasic($value) && (bool) preg_match("/^{$scheme}:\/\//", $value);
+
     }
 
     /**

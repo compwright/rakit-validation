@@ -11,7 +11,7 @@ class Ipv6Test extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Ipv6;
+        $this->rule = new Ipv6();
     }
 
     public function testValids()

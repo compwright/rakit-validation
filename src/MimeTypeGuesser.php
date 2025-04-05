@@ -4,7 +4,6 @@ namespace Rakit\Validation;
 
 class MimeTypeGuesser
 {
-
     /** @var array */
     protected $mimeTypes = [
         'application/andrew-inset' => 'ez',
@@ -787,7 +786,7 @@ class MimeTypeGuesser
      */
     public function getExtension(string $mimeType)
     {
-        return isset($this->mimeTypes[$mimeType])? $this->mimeTypes[$mimeType] : null;
+        return isset($this->mimeTypes[$mimeType]) ? $this->mimeTypes[$mimeType] : null;
     }
 
     /**

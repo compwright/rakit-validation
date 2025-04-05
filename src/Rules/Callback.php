@@ -8,7 +8,6 @@ use Closure;
 
 class Callback extends Rule
 {
-
     /** @var string */
     protected $message = "The :attribute is not valid";
 
@@ -49,10 +48,11 @@ class Callback extends Rule
         if (is_string($invalidMessage)) {
             $this->setMessage($invalidMessage);
             return false;
-        } elseif (false === $invalidMessage) {
-            return false;
         }
+        return ! (false === $invalidMessage)
 
-        return true;
+
+
+        ;
     }
 }

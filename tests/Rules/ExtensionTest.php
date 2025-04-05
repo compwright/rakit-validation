@@ -11,7 +11,7 @@ class ExtensionTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Extension;
+        $this->rule = new Extension();
     }
 
     public function testValids()

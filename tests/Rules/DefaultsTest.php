@@ -11,7 +11,7 @@ class DefaultsTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Defaults;
+        $this->rule = new Defaults();
     }
 
     public function testDefaults()

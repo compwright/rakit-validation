@@ -11,7 +11,7 @@ class MinTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Min;
+        $this->rule = new Min();
     }
 
     public function testValids()

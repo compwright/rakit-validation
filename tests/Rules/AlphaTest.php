@@ -12,7 +12,7 @@ class AlphaTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Alpha;
+        $this->rule = new Alpha();
     }
 
     public function testValids()
@@ -25,7 +25,7 @@ class AlphaTest extends TestCase
     {
         $this->assertFalse($this->rule->check(2));
         $this->assertFalse($this->rule->check([]));
-        $this->assertFalse($this->rule->check(new stdClass));
+        $this->assertFalse($this->rule->check(new stdClass()));
         $this->assertFalse($this->rule->check('123asd'));
         $this->assertFalse($this->rule->check('asd123'));
         $this->assertFalse($this->rule->check('foo123bar'));

@@ -11,7 +11,7 @@ class AlphaSpacesTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new AlphaSpaces;
+        $this->rule = new AlphaSpaces();
     }
 
     public function testValids()

@@ -9,7 +9,8 @@ use Rakit\Validation\Rules\Interfaces\BeforeValidate;
 
 class UploadedFile extends Rule implements BeforeValidate
 {
-    use Traits\FileTrait, Traits\SizeTrait;
+    use Traits\FileTrait;
+    use Traits\SizeTrait;
 
     /** @var string */
     protected $message = "The :attribute is not valid uploaded file";
@@ -169,7 +170,7 @@ class UploadedFile extends Rule implements BeforeValidate
         }
 
         if (!empty($allowedTypes)) {
-            $guesser = new MimeTypeGuesser;
+            $guesser = new MimeTypeGuesser();
             $ext = $guesser->getExtension($value['type']);
             unset($guesser);
 

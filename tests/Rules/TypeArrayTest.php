@@ -11,7 +11,7 @@ class TypeArrayTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new TypeArray;
+        $this->rule = new TypeArray();
     }
 
     public function testValids()

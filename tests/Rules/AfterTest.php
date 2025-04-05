@@ -8,7 +8,6 @@ use DateTime;
 
 class AfterTest extends TestCase
 {
-
     /**
      * @var \Rakit\Validation\Rules\After
      */
@@ -49,12 +48,12 @@ class AfterTest extends TestCase
         $now = new DateTime();
 
         return [
-            [12], //12 instead of 2012
-            ["09"], //like '09 instead of 2009
+            [12], // 12 instead of 2012
+            ["09"], // like '09 instead of 2009
             [$now->format("Y m d")],
             [$now->format("Y m d h:i:s")],
-            ["tommorow"], //typo
-            ["lasst year"] //typo
+            ["tommorow"], // typo
+            ["lasst year"] // typo
         ];
     }
 

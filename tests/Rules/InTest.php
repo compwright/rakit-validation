@@ -11,7 +11,7 @@ class InTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new In;
+        $this->rule = new In();
     }
 
     public function testValids()

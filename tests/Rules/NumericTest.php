@@ -11,7 +11,7 @@ class NumericTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Numeric;
+        $this->rule = new Numeric();
     }
 
     public function testValids()

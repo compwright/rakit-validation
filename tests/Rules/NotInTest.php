@@ -11,7 +11,7 @@ class NotInTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new NotIn;
+        $this->rule = new NotIn();
     }
 
     public function testValids()

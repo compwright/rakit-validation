@@ -11,7 +11,7 @@ class Ipv4Test extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Ipv4;
+        $this->rule = new Ipv4();
     }
 
     public function testValids()
