@@ -218,7 +218,7 @@ class Helper
      * @param  string|null  $lastSeparator
      * @return string
      */
-    public static function join(array $pieces, string $separator, string $lastSeparator = null): string
+    public static function join(array $pieces, string $separator, ?string $lastSeparator = null): string
     {
         if (is_null($lastSeparator)) {
             $lastSeparator = $separator;
@@ -244,7 +244,7 @@ class Helper
      * @param  string|null  $suffix
      * @return array
      */
-    public static function wraps(array $strings, string $prefix, string $suffix = null): array
+    public static function wraps(array $strings, string $prefix, ?string $suffix = null): array
     {
         if (is_null($suffix)) {
             $suffix = $prefix;
