@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class CallbackTest extends TestCase
 {
+    private Callback $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Callback;
         $this->rule->setCallback(function ($value) {

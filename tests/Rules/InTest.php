@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class InTest extends TestCase
 {
+    private In $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new In;
     }

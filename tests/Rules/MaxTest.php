@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class MaxTest extends TestCase
 {
+    private Max $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Max;
     }

@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class IpTest extends TestCase
 {
+    private Ip $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Ip;
     }

@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class MimesTest extends TestCase
 {
+    private Mimes $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Mimes();
     }

@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class TypeArrayTest extends TestCase
 {
+    private TypeArray $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new TypeArray;
     }

@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class BetweenTest extends TestCase
 {
+    private Between $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Between;
     }

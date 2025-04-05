@@ -7,8 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class IntegerTest extends TestCase
 {
+    private Integer $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Integer;
     }

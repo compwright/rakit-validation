@@ -8,8 +8,9 @@ use stdClass;
 
 class AlphaTest extends TestCase
 {
+    private Alpha $rule;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = new Alpha;
     }
