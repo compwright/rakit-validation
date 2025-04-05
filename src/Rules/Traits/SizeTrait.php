@@ -6,7 +6,6 @@ use InvalidArgumentException;
 
 trait SizeTrait
 {
-
     /**
      * Get size (int) value from given $value
      *
@@ -24,15 +23,18 @@ trait SizeTrait
 
         if (is_int($value) || is_float($value)) {
             return (float) $value;
-        } elseif (is_string($value)) {
-            return (float) mb_strlen($value, 'UTF-8');
-        } elseif ($this->isUploadedFileValue($value)) {
-            return (float) $value['size'];
-        } elseif (is_array($value)) {
-            return (float) count($value);
-        } else {
-            return false;
         }
+        if (is_string($value)) {
+            return (float) mb_strlen($value, 'UTF-8');
+        }
+        if ($this->isUploadedFileValue($value)) {
+            return (float) $value['size'];
+        }
+        if (is_array($value)) {
+            return (float) count($value);
+        }
+        return false;
+
     }
 
     /**

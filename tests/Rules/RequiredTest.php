@@ -12,7 +12,7 @@ class RequiredTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Required;
+        $this->rule = new Required();
     }
 
     public function testValids()
@@ -23,7 +23,7 @@ class RequiredTest extends TestCase
         $this->assertTrue($this->rule->check(true));
         $this->assertTrue($this->rule->check('0'));
         $this->assertTrue($this->rule->check(0));
-        $this->assertTrue($this->rule->check(new stdClass));
+        $this->assertTrue($this->rule->check(new stdClass()));
     }
 
     public function testInvalids()

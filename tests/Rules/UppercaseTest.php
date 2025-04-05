@@ -11,7 +11,7 @@ class UppercaseTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Uppercase;
+        $this->rule = new Uppercase();
     }
 
     public function testValids()

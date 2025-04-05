@@ -7,7 +7,6 @@ use Rakit\Validation\Rules\Interfaces\ModifyValue;
 
 class Defaults extends Rule implements ModifyValue
 {
-
     /** @var string */
     protected $message = "The :attribute default is :default";
 
@@ -44,7 +43,7 @@ class Defaults extends Rule implements ModifyValue
      */
     protected function isEmptyValue($value): bool
     {
-        $requiredValidator = new Required;
+        $requiredValidator = new Required();
         return false === $requiredValidator->check($value, []);
     }
 }

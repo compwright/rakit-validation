@@ -11,7 +11,7 @@ class UrlTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Url;
+        $this->rule = new Url();
     }
 
     public function testValids()

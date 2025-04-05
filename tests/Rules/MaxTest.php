@@ -11,7 +11,7 @@ class MaxTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Max;
+        $this->rule = new Max();
     }
 
     public function testValids()

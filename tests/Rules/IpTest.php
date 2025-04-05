@@ -11,7 +11,7 @@ class IpTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Ip;
+        $this->rule = new Ip();
     }
 
     public function testValids()

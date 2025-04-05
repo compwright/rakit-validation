@@ -11,7 +11,7 @@ class JsonTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Json;
+        $this->rule = new Json();
     }
 
     public function testValids()

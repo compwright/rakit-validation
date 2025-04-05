@@ -11,7 +11,7 @@ class AlphaDashTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new AlphaDash;
+        $this->rule = new AlphaDash();
     }
 
     public function testValids()

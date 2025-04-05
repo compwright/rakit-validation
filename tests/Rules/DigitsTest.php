@@ -11,7 +11,7 @@ class DigitsTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Digits;
+        $this->rule = new Digits();
     }
 
     public function testValids()

@@ -15,7 +15,7 @@ class ValidatorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->validator = new Validator;
+        $this->validator = new Validator();
     }
 
     public function testPasses()
@@ -634,7 +634,7 @@ class ValidatorTest extends TestCase
     {
         $this->validator->allowRuleOverride(true);
 
-        //This is a custom rule defined in the fixtures directory
+        // This is a custom rule defined in the fixtures directory
         $this->validator->addValidator('required', new Required());
 
         $data = ['s' => json_encode(['name' => 'space x', 'human' => false])];
@@ -820,7 +820,7 @@ class ValidatorTest extends TestCase
     public function testEmptyArrayAssocValidation()
     {
         $validation = $this->validator->validate([], [
-            'user'=> 'required',
+            'user' => 'required',
             'user.email' => 'email',
         ]);
 

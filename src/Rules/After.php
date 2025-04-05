@@ -6,7 +6,6 @@ use Rakit\Validation\Rule;
 
 class After extends Rule
 {
-
     use Traits\DateUtilsTrait;
 
     /** @var string */

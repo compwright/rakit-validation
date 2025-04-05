@@ -11,7 +11,7 @@ class DigitsBetweenTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new DigitsBetween;
+        $this->rule = new DigitsBetween();
     }
 
     public function testValids()

@@ -11,7 +11,7 @@ class DateTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Date;
+        $this->rule = new Date();
     }
 
     public function testValids()

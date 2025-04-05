@@ -2,8 +2,6 @@
 
 namespace Rakit\Validation;
 
-use Rakit\Validation\MissingRequiredParameterException;
-
 abstract class Rule
 {
     /** @var string */
@@ -145,7 +143,7 @@ abstract class Rule
      */
     public function parameter(string $key)
     {
-        return isset($this->params[$key])? $this->params[$key] : null;
+        return isset($this->params[$key]) ? $this->params[$key] : null;
     }
 
     /**

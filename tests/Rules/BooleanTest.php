@@ -11,7 +11,7 @@ class BooleanTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Boolean;
+        $this->rule = new Boolean();
     }
 
     public function testValids()

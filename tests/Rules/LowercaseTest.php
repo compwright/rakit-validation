@@ -11,7 +11,7 @@ class LowercaseTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Lowercase;
+        $this->rule = new Lowercase();
     }
 
     public function testValids()

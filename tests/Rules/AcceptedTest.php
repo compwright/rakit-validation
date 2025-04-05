@@ -11,7 +11,7 @@ class AcceptedTest extends TestCase
 
     public function setUp(): void
     {
-        $this->rule = new Accepted;
+        $this->rule = new Accepted();
     }
 
     public function testValids()
