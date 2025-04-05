@@ -15,7 +15,10 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Rakit\\Validation\\Tests\\": ["tests", "tests/Fixtures"]
+      "Rakit\\Validation\\Tests\\": [
+        "tests",
+        "tests/Fixtures"
+      ]
     }
   },
   "require": {
